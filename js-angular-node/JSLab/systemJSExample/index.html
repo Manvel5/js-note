@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<!-- npm install lite-server -g 
+		lite-server -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.3/system.js"></script>
+	<script type="text/javascript">
+		System.import('/src/es6module.js').then(res => {
+			console.trace(res)
+		})
+	</script>
+</body>
+</html>

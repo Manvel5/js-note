@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angularjs example</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app='app'>
+	<p ng-init="a=5; b=4">{{'hello ' + "world " + a * b}}</p>
+	<p ng-bind="a*b">hello</p>
+
+	<div ng-init="numbers=[0,1,2,3,4,5,6,7,8,9]">
+		<span ng-repeat="number in numbers">{{number}}</span>
+	</div>
+	<div ng-controller='fcontroller'>
+		<p>{{username | uppercase | limitTo:3}}</p>
+	</div>
+
+
+</body>
+</html>
