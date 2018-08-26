@@ -1,0 +1,6 @@
+ДЗ с урока https://github.com/MaratOM/gb_node/pull/3/files
+ссылки:
+1) https://github.com/mattdesl/module-best-practices
+2) https://github.com/hemanth/functional-programming-jargon
+3) https://github.com/thejameskyle/itsy-bitsy-data-structures
+4) https://github.com/tj TJ Holowaychuk
