@@ -1,0 +1,23 @@
+{
+  "name": "firstTSProj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha -r ts-node/register src/test/*.spec.ts",
+    "tsc": "./node_modules/.bin/tsc -p tsconfig.json && node ./src/js/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "4.1.3",
+    "@types/mocha": "5.2.0",
+    "chai": "4.1.2",
+    "mocha": "5.1.1",
+    "ts-node": "6.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
+    "typescript": "^2.8.3"
+  }
+}
