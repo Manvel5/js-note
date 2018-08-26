@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+<script type="text/javascript">
+	var treeangle = (function(global, document, undefined){
+		var div = document.createElement('div');
+		var body = document.getElementsByTagName('body')[0];
+
+		//blocking main	
+		function createTreangle(count){
+			var div = document.createElement('div');
+			var count = count || 100;
+			var html = '';
+			var row;
+			for(var i = 0; i <= count; i++){
+				row = '';
+				for(var j = 0; j <= i; j++){
+					row += "# ";
+				}
+				html = html + '<p>' + row + '</p>';
+			}
+			div.innerHTML = html;
+			body.appendChild(div);
+		}
+
+		//not blocking main	
+		function createTreeangleAsync(i, count, j, row, html){
+			if(j <= i){
+				row += "# ";
+				j++;
+			}else{
+				html = html + '<p>' + row + '</p>';
+				i++;
+				j = 0;
+				row = '';
+				if(i > count){
+					div.innerHTML = html;
+					body.appendChild(div);
+					return;
+				}
+			}
+			global.setTimeout(createTreeangleAsync.bind(null, i, count ,j , row, html));
+		}
+
+		function getTreeangleAsync(count){
+			count = count || 10;
+			createTreeangleAsync(0, count, 0, "", "");
+		}
+
+		return {
+			createTreangle: createTreangle,
+			getTreeangleAsync: getTreeangleAsync
+		}	
+	})(window, document);
+	treeangle.getTreeangleAsync();
+	treeangle.createTreangle();
+
+</script>
+</body>
+</html>

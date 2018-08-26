@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Classic Slides with impress.js | Simple example impress.js slide show | by Henrik Ingo @henrikingo</title>
+    <meta name="description" content="Simple example impress.js slide show" />
+    <meta name="author" content="Henrik Ingo" />
+    <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
+    <link rel="stylesheet" href="../../extras/mermaid/mermaid.forest.css">
+    <link href="css/classic-slides.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+<div id="impress" data-transition-duration="1000" data-autoplay="10">
+
+<!-- Slide 1 -->
+    <div class="step slide title" data-x="1000" data-y="0">
+        http://kangax.github.io/compat-table/es2016plus/
+        https://caniuse.com/#search=promise
+    </div>
+<!-- Slide 1 -->
+    <div class="step slide title" data-x="1000" data-y="0">
+        <h1>ES6 Class</h1><br>
+        <pre>
+            <code>
+                class User {
+                    constructor(login, password) {
+                        this._login = login;
+                        this._password = password;
+                    }
+
+                    hello() {
+                        console.log('Hello, ' + this._login);
+                    }
+
+                    get login() {
+                        return this._login;
+                    }
+
+                    set login(value) {
+                        this._login = value;
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+<!-- Slide 2 -->
+    <div class="step slide title" data-x="2000" data-y="0">
+        <h1>ES6 Class: Static Methods</h1><br>
+        <pre>
+            <code>
+                class MathUtils {
+                    static sqr(number) {
+                        return number * number;
+                    }
+                    static abs(number) {
+                        return number < 0 ? -number : number;
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+
+<!-- Slide 3 -->
+    <div class="step slide title" data-x="3000" data-y="0">
+        <h1>ES6</h1><br>
+        <pre>
+            <code>
+                const user1 = new User('Alex', 'qwerty123');
+                const user2 = new User('Jon', 'passw0rd');
+                 
+                user1.hello();       // Hello, Alex
+                user2.hello();       // Hello, Jon
+                 
+                MathUtils.sqr(6);    // 36
+                MathUtils.abs(-42);  // 42
+            </code>
+        </pre>
+    </div>    
+
+    <!-- Slide  4-->
+<div class="step slide title" data-x="4000" data-y="0">
+        <h1>ES6 inheritance</h1><br>
+        <pre>
+            <code>
+                class Point {
+                    constructor(x, y) {
+                        this.x = x;
+                        this.y = y;
+                    }
+                    toString() {
+                        return '(' + this.x + ', ' + this.y + ')';
+                    }
+                }
+                class ColorPoint extends Point {
+                    constructor(x, y, color) {
+                        super(x, y);
+                        this.color = color;
+                    }
+                    toString() {
+                        return super.toString() + this.color;
+                    }
+                }
+                const cp = new  ColorPoint(10, 10, 'red');
+            </code>
+        </pre>
+</div>   
+
+<!-- Slide 5 -->
+<div class="step slide title" data-x="5000" data-y="0">
+        <h1>ES5 Fuction Constructor</h1><br>
+        <pre>
+            <code>
+                function User(login, password) {
+                    this._login = login;
+                    this._password = password;
+                }
+                User.prototype.hello = function() {
+                    console.log('Hello, ' + this._login);
+                }
+                var user = new User('Alex', '123456');
+                user.hello(); // Hello, Alex
+            </code>
+        </pre>
+</div>
+
+<!-- Slide 6 -->
+    <div class="step slide title" data-x="6000" data-y="0">
+        <h1>ES5: Static Methods</h1><br>
+        <pre>
+            <code>
+                function MathUtils() {...}
+                MathUtils.sqr = function(number) {
+                    return number * number;
+                };
+                MathUtils.abs = function() {
+                    return number < 0 ? -number : number;
+                };
+                MathUtils.sqr(6); //36
+                MathUtils.PI = 3.14;
+            </code>
+        </pre>
+    </div>
+<!-- Slide 7 -->
+<div class="step slide title" data-x="7000" data-y="0">
+<h1>ES5 inheritance</h1><br>
+    <pre>
+        <code>
+            function Point(x, y){
+                this.x = x;
+                this.y = y;
+            }
+            Point.prototype.toString = function() {
+                return '(' + this.x + ', ' + this.y + ')';
+            }
+            function ColorPoint(x, y, color) {
+                Point.call(this, x, y);
+                this.color = color;
+            }
+            ColorPoint.prototype = Object.create(Point.prototype);
+            ColorPoint.prototype.constructor = ColorPoint;
+            ColorPoint.prototype.toString = function() {
+                return Point.prototype.toString.call(this, this.x, this.y) + this.color;
+            }
+            var cp = new  ColorPoint(10, 10, 'red');
+        </code>
+    </pre>    
+</div> 
+<!-- Slide 8 -->
+<div class="step slide title" data-x="8000" data-y="0">
+    <h1>How inheritance works in JavaScript ?</h1>
+    <br><br><br><br><br>
+    <img src="images/subclassing_es6.jpg" class="right" style="width: 84%" />
+</div>
+
+<!-- Slide 8 -->
+<div class="step slide" data-x="9000" data-y="0">
+    <h1>JS package managers</h1>
+    <ul>
+        <li>bower <a href="https://bower.io/">https://bower.io/</a></li>
+        <li>npm   <a href="https://www.npmjs.com/">https://www.npmjs.com/</a></li>
+        <li>yarn  <a href="https://yarnpkg.com/en/">https://yarnpkg.com/en/</a></li>
+    </ul>
+</div>
+
+<!-- Slide 9 -->
+<div class="step slide" data-x="10000" data-y="0">
+    <h1>bower</h1>
+    <pre>
+        <code>
+            bower install rxjs --save
+            // "rxjs": "^4.1.0"
+            npm install rxjs --save
+            // "rxjs": "^5.5.6"
+        </code>
+    </pre>
+</div>
+
+<!-- Slide 10 -->
+<div class="step slide" data-x="11000" data-y="0">
+    <h1>npm comands</h1>
+    <pre>
+        <code>
+              1. npm init, npm init --yes, npm init -y
+
+              2. npm install jquery --save, npm i jquery -S, npm i jquery -S
+
+              3. npm i --save-dev gulp, npm i -D gulp
+
+              4. npm i --save --save-exact jQuery, npm i -SE jQuery
+
+              5. npm i rxjs@latest -SE
+
+              6. npm home jquery 
+
+              7. npm repo jquery
+
+              8. npm search jquery
+
+              9. npm run "script"
+        </code>
+    </pre>
+</div>
+
+<!-- Slide 11 -->
+<div class="step slide" data-x="12000" data-y="0">
+    <h1>nvm. Node Version Manager</h1>
+    <pre>
+        <code>
+            // Instalation
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+            wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+
+            // install nodejs
+            nvm install 8.9.4
+            nvm install node
+
+            nvm uninstall 0.11
+
+            nvm use 8.9.4
+            nvm use node --lts
+
+            nvm ls
+            nvm current
+        </code>
+    </pre>
+</div>
+
+<!-- Slide 12 -->
+<div class="step slide" data-x="13000" data-y="0">
+    <h1>yarn </h1>
+    <ul>
+        <li>Ultra Fast</li>
+        <li>Mega Secure</li>
+        <li>Super Reliable</li>
+    </ul>        
+</div>
+
+<!-- ///Typescript -->
+<!-- Slide 13 -->
+<div class="step slide" data-x="14000" data-y="0">
+    <h1>Typescript </h1>
+    <pre>
+        <code>
+            //INSTALL
+            npm install -g typescript
+
+            // COMPILE
+            tsc helloworld.ts
+        </code>
+    </pre>       
+</div>
+<!-- Slide 14 -->
+<div class="step slide" data-x="15000" data-y="0">
+    <h1>tsc sum.ts </h1>
+    <pre>
+        <code>
+            // typescript code 
+            function add(x: number, y: number): number {
+                return x + y;
+            }
+
+            //JavaScript code
+            function sum(x, y) {
+                return x + y;
+            }
+        </code>
+    </pre>       
+</div>
+<!-- Slide 15 -->
+<div class="step slide" data-x="16000" data-y="0">
+    <h1>Class </h1>
+    <pre>
+        <code>
+            class Greeter {
+                greeting: string;
+                constructor(message: string) {
+                    this.greeting = message;
+                }
+                greet() {
+                    return "Hello, " + this.greeting;
+                }
+            }
+             
+            let greeter = new Greeter("world");
+        </code>
+    </pre>       
+</div>
+<!-- Slide 15 -->
+<div class="step slide" data-x="17000" data-y="0">
+    <h1>Inheritance </h1>
+    <pre>
+        <code>
+            class Animal {
+                private name: string;
+                constructor(theName: string) { this.name = theName; }
+                protected move(distanceInMeters: number = 0) {
+                    console.log(`${this.name} moved ${distanceInMeters}m.`);
+                }
+            }
+             
+            class Horse extends Animal {
+                private age: number;
+                constructor(name: string) { super(name); }
+                protected move(distanceInMeters = 45) {
+                    console.log("Galloping...");
+                    super.move(distanceInMeters);
+                }
+            }
+ 
+            const tom: Animal = new Horse("Horse");
+        </code>
+    </pre>       
+</div>
+<!-- Slide 16 -->
+<div class="step slide" data-x="18000" data-y="0">
+    <h1>Interface </h1>
+    <pre>
+        <code>
+            interface LabelledValue {
+                label: string;
+                value: number | string
+            }
+             
+            function printLabel(labelledObj: LabelledValue) {
+                console.log(labelledObj.label);
+            }
+             
+            let myObj = {size: 10, label: "Size 10 Object"};
+            printLabel(myObj);
+        </code>
+    </pre>       
+</div>
+<!-- Slide 17 -->
+<div class="step slide" data-x="19000" data-y="0">
+    <h1>Type Tuple , enum</h1>
+    <pre>
+        <code>
+            let x: [string, number];
+            x = ['hello', 10]; // OK
+            x = [10, 'hello']; // Error
+
+            enum Color {Red, Green, Blue};
+            let c: Color = Color.Green;
+        </code>
+    </pre>       
+</div>
+
+<!-- Slide 18 -->
+<div class="step slide" data-x="20000" data-y="0">
+    <h1>Literature</h1>
+    <ul>
+        <li><a href="https://github.com/MikhalevValentin/JavaScript_Books/blob/master/JavaScript%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%B2(2013%2C%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%81%20%D0%97%D0%B0%D0%BA%D0%B0%D1%81).pdf">JavaScript для профессиональных веб-разработчиков</a></li>
+        <li><a href="https://www.youtube.com/watch?v=mub0B5peRIs&list=PLrCZzMib1e9r9OwZDTtkgdIOy84SwICKu">Введение во Frontend | Технострим</a></li>
+        <li><a href="http://sd.blackball.lv/library/JavaScript_Patterns_%282010%29.pdf">JavaScript Patterns</a></li>
+        <li><a href="http://143.95.72.211/ebooks/the_art_of_readable_code.pdf">The art of Readable Code</a></li>
+    </ul>
+</div>
+
+<!-- Slide 19 -->
+<div class="step slide title" data-x="21000" data-y="0">
+    <h1>MVVM design patern</h1>
+    <br><br><br><br><br>
+    <img src="images/mvvm.png" style="width: 100%" />
+</div>
+
+<!-- Slide 20 -->
+<div class="step slide title" data-x="22000" data-y="0">
+    <h1>Angular 2+</h1>
+    <br>
+    <pre>
+        <code>
+            npm install -g @angular/cli
+
+            ng new project --routing
+
+            ng g component mycomponent
+
+            ng g service my-service
+
+            ng g module admin
+
+            ng g pipe lower-case
+
+            ng g class user
+
+            ng g enum days
+
+            ng g interface base
+
+            ng g guard
+
+            ng g directive select2
+        </code>
+    </pre>
+</div>
+
+
+
+    <script type="text/javascript">
+        var acmeDrawGraph = function() {
+            var profits = {};
+            
+            // Q1-Q2: get innerHTML, remove €
+            var value = document.getElementById('acme-q1').innerHTML;
+            if( value[value.length-1] == "€" ) value = value.substring(0, value.length-1);
+            profits['q1'] = value;
+            var value = document.getElementById('acme-q2').innerHTML;
+            if( value[value.length-1] == "€" ) value = value.substring(0, value.length-1);
+            profits['q2'] = value;
+            
+            // Q3-Q4: get input.value
+            profits['q3'] = document.getElementById('acme-q3').value;
+            profits['q4'] = document.getElementById('acme-q4').value;
+
+            // Convert all to numeric value, and remember max value for scaling purposes.
+            var max = profits['q1'];
+            for ( var q in profits ) {
+                profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
+                if( profits[q] > max ) {
+                    max = profits[q];
+                }
+            }
+            // Draw the bar graph
+            for ( var q in profits ) {
+                var h = 200 * profits[q] / max;
+                var div = document.getElementById('acme-graph-'+q);
+                div.style = 'height: ' + h + 'px';
+            }
+        };
+        acmeDrawGraph();
+    </script>
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+</div>
+<div id="impress-toolbar"></div>
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+<div id="impress-help"></div>
+<script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="../../extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/javascript" src="../../js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
