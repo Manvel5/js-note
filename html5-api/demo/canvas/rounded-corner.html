@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>HTML5 API. Демонстрация: закруглённый угол</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    canvas {
+      display: block;
+      margin: 20px auto 0;
+      border: 1px dotted #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="c" width="550" height="300"></canvas>
+  <script>
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    var rectWidth = 200;
+    var rectHeight = 100;
+    var rectX = 189; // X-координата начала
+    var rectY = 50; // Y-координата начала
+    var cornerRadius = 50;
+
+    ctx.beginPath();
+    ctx.moveTo(rectX, rectY);
+    ctx.lineTo(rectX + rectWidth - cornerRadius, rectY);
+
+    ctx.arcTo(rectX + rectWidth, rectY, rectX + rectWidth, rectY + cornerRadius, cornerRadius);
+
+    ctx.lineTo(rectX + rectWidth, rectY + rectHeight);
+    ctx.lineWidth = 5;
+    ctx.stroke();
+  </script>
+</body>
+
+</html>

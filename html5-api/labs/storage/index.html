@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 API. Лабораторная работа: WebStorage</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script>
+    var currentStorage = localStorage; // sessionStorage или localStorage
+    var emptyHeader = "Локальное хранилище пусто";
+
+    /*
+     **
+      ЗАДАНИЕ 1.
+      **********
+      Описать функцию updateTable, которая
+          -в цикле очищает таблицу (удаляет все tr в tbody)
+          -зачитывает данные из текущего хранилища
+          -если данных нет, создаёт tr с emptyHeader
+          -если есть, в цикле заполняет таблицу данными
+          -в колонку "Удалить" вставить span с текстом 'X' и повесить на его onclick ф-цию deleteItem, передав в качестве параметра ключ текущей записи в хранилище
+      Добавить функцию updateTable как обработчик события onload текущего окна
+    **
+    */
+    function updateTable() {}
+
+    /*
+     **
+        ЗАДАНИЕ 2.
+        **********
+        Описать функцию getStorage, которая
+            -выбирает текущее хранилище
+            -записывает результат в currentStorage
+            -вызывает функцию updateTable()
+    **
+    */
+    function getStorage() {}
+
+
+    /*
+     **
+      ЗАДАНИЕ 3.
+      **********
+      Описать функцию saveItem, которая
+          -получает ключ и значение для новой записи
+          -спрашивает пользователя: "Вы уверены, что хотите полностью очистить локальное хранилище?"
+          -добавляет новую запись в хранилище
+          -вызывает updateTable()
+    **
+    */
+    function saveItem() {}
+
+    /*
+     **
+      ЗАДАНИЕ 4.
+      **********
+      Описать функцию deleteItem, которая
+          -принимает в качестве параметра ключ текущей записи в хранилище
+          -спрашивает пользователя: "Вы уверены, что хотите удалить эту запись?"
+          -при положительном ответе пользователя удаляет запись из хранилища
+          -вызывает updateTable()
+    **
+    */
+    function deleteItem(key) {}
+
+    /*
+     **
+      ЗАДАНИЕ 5.
+      **********
+      Описать функцию clearStorage, которая
+          -спрашивает пользователя: "Вы уверены, что хотите полностью очистить локальное хранилище?"
+          -при положительном ответе пользователя удаляет все записи из хранилища
+          -вызывает updateTable()
+    **
+    */
+    function clearStorage() {}
+  </script>
+</head>
+
+<body>
+  <label for="storage">Выберите хранилище:</label>
+  <select id="storage" onchange="getStorage()">
+    <option value="0">localStorage</option>
+    <option value="1">sessionStorage</option>
+  </select>
+  <hr/>
+  <label for="key">Ключ:</label>
+  <input type="text" id="key" autofocus autocomplete="off">
+  <label for="value">Значение:</label>
+  <input type="text" id="value" autocomplete="off">
+  <button onclick="saveItem()">Сохранить</button>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Ключ</th>
+        <th>Значение</th>
+        <th>Удалить</th>
+      </tr>
+    </thead>
+    <tbody id="output">
+      <tr>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <button onclick="clearStorage()">Очистить всё</button>
+</body>
+
+</html>

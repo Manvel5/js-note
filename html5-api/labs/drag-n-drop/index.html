@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML5 API. Лабораторная работа: квадратики</title>
+  <meta charset="utf-8" />
+  <style>
+    div {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+    }
+    
+    div#element-red,
+    div#element-gray,
+    div#element-yellow {
+      width: 50px;
+      height: 50px;
+      top: 50px;
+    }
+    
+    div#element-red {
+      background-color: red;
+      left: 30px;
+    }
+    
+    div#element-gray {
+      background-color: gray;
+      left: 100px;
+    }
+    
+    div#element-yellow {
+      background-color: yellow;
+      left: 170px;
+    }
+    
+    div#area-red,
+    div#area-gray,
+    div#area-yellow {
+      width: 50px;
+      height: 50px;
+      top: 120px;
+    }
+    
+    div#area-yellow {
+      border: 3px solid yellow;
+      left: 10px;
+    }
+    
+    div#area-red {
+      border: 3px solid red;
+      left: 100px;
+    }
+    
+    div#area-gray {
+      border: 3px solid gray;
+      left: 190px;
+    }
+  </style>
+  <script>
+    /*
+    **
+      ЗАДАНИЕ
+      *******
+      Реализовать перетаскивание квадратов залитых цветом в квадраты с рамками.
+      Квадрат конкретного цвета должен перетаскиваться только в квадрат с рамкой соответствующего цвета.
+      После отпускания кнопки манипулятора типа "мышь" квадрат с рамкой должен закраситься.
+      Пример:
+          Квадрат красного цвета можно перетянуть только на квадрат с красной рамкой.
+          После отработки события "drop" квадрат с красной рамкой должен покраситься в красный цвет.
+    **		
+    */
+  </script>
+</head>
+
+<body>
+  <div id="element-red"></div>
+  <div id="element-gray"></div>
+  <div id="element-yellow"></div>
+  <div id="area-red"></div>
+  <div id="area-gray"></div>
+  <div id="area-yellow"></div>
+</body>
+
+</html>

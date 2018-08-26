@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML5 API. Демонстрация: Web Storage</title>
+  <meta charset="UTF-8" />
+  <style>
+    form {
+      float: left
+    }
+    
+    form label {
+      float: left
+    }
+    
+    form div {
+      text-align: right
+    }
+  </style>
+  <script>
+    var txtName, txtAge, btnSave, btnGet;
+    window.onload = function () {
+      txtName = document.getElementById("n");
+      txtAge = document.getElementById("a");
+      btnSave = document.getElementById("b1");
+      btnGet = document.getElementById("b2");
+      btnSave.addEventListener('click', dataSave, false);
+      btnGet.addEventListener('click', dataGet, false);
+
+    };
+
+    function dataSave() {
+
+    }
+
+    function dataGet() {
+
+    }
+  </script>
+</head>
+
+<body>
+  <form action="" onsubmit="return false">
+    <div>
+      <label for="n">Имя: </label>
+      <input id='n' type="text" name="name" />
+    </div>
+    <div>
+      <label for="a">Возраст: </label>
+      <input id='a' type="text" name="age" />
+    </div>
+    <div>
+      <button id="b1">Сохранить</button>
+      <button id="b2">Получить</button>
+    </div>
+  </form>
+</body>
+
+</html>

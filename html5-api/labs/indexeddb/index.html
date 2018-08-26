@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 API. Лабораторная работа: Использование локальной базы данных</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <label for="firstName">Имя:</label>
+  <input type="text" id="firstName">
+  <label for="lastName">Фамилия:</label>
+  <input type="text" id="lastName">
+  <label for="email">Email:</label>
+  <input type="text" id="email">
+  <label for="phone">Телефон:</label>
+  <input type="text" id="phone">
+  <button onclick="saveItem()">Сохранить</button>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Email</th>
+        <th>Телефон</th>
+        <th>Изменить</th>
+        <th>Удалить</th>
+      </tr>
+    </thead>
+    <tbody id="output">
+      <tr>
+        <td colspan="7">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <button onclick="updateTable()">Показать всех</button>
+
+  <script>
+    var db;
+    var dbName = "addressBook";
+    var dbVersion = 1;
+    var tableName = "users";
+    var emptyHeader = "Записей в книге нет";
+
+    /*
+     **	
+      ЗАДАНИЕ
+      *******
+      Откройте соединение с базой данных (метод "open")
+      Опишите событие "onupgradeneeded", которое может произойти после соединения с базой данных:
+          - создайте таблицу tableName, если её на данный момент не существует
+      Опишите событие "onsuccess", которое может произойти после соединения с базой данных:
+       - проинициализируйте глобальную переменную "db"
+      Опишите событие "onerror", которое может произойти после соединения с базой данных:
+       - выведите в консоль описание ошибки
+      Опишите функцию updateTable(), которая перерисовывает таблицу и выводит все записи из базы данных	
+      Опишите функцию saveItem(), которая выбирает введённые значения и записывает их в базу данных
+      Опишите функцию updateItem(key), которая по переданному ключу изменяет текущую запись в базе данных
+      Опишите функцию deleteItem(key), которая по переданному ключу удаляет запись из базы данных
+   **
+   */
+  </script>
+</body>
+
+</html>

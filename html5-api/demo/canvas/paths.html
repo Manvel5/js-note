@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>HTML5 API. Демонстрация: прямые и кривые</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    canvas {
+      display: block;
+      margin: 20px auto 0;
+      border: 1px dotted #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="c" width="550" height="300"></canvas>
+  <script>
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    ctx.beginPath();
+
+    ctx.moveTo(100, 20);
+    // Прямая 1
+    ctx.lineTo(200, 160);
+    // Квадратичная кривая
+    ctx.quadraticCurveTo(230, 200, 250, 120);
+    // Кривая Безье
+    ctx.bezierCurveTo(290, -40, 300, 200, 400, 150);
+    // Прямая 2
+    ctx.lineTo(500, 90);
+
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'green';
+    ctx.stroke();
+  </script>
+</body>
+
+</html>

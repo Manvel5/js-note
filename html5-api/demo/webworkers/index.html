@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML5 API. Демонстрация: Web workers</title>
+  <meta charset="utf-8" />
+  <style>
+    form,
+    label {
+      float: left
+    }
+    
+    form div {
+      text-align: right
+    }
+  </style>
+
+</head>
+
+<body>
+  <form action="#" method="post" onsubmit="return false">
+    <div>
+      <label for="n">Имя: </label>
+      <input id="n" type="text" name="name" placeholder="Ваше имя" />
+    </div>
+    <div>
+      <button id="b">Запустить цикл</button>
+    </div>
+    <div>
+      <button id="x">Передать имя</button>
+    </div>
+  </form>
+  <div id="d"></div>
+  <script>
+    document.getElementById("b").onclick = function () {
+      var div = document.getElementById('d');
+      div.innerHTML = someLoop();
+    };
+    document.getElementById("x").onclick = function () {
+      console.log('Кнопка нажата');
+    };
+
+
+
+    function someLoop() {
+      for (var x = 1; x <= 1000000000; ++x);
+      return 'Цикл закончен';
+    }
+  </script>
+</body>
+
+</html>
