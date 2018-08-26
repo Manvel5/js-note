@@ -1,0 +1,4 @@
+.htacces file used for apache config (local)
+1) set -> AllowOverride all in the httpd.conf file
+2) create .htacces file in our folder
+3) for example write Options Indexes or Options -Indexes 
