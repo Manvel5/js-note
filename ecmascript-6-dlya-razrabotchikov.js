@@ -1,3 +1,10 @@
+// 1. конъюнкция A ^ B логичечкий and (и) 
+// 2. дизъюнкция A ∨ B логическая or (или)  
+// 3. отрицание  A ¬ B not (не) 	
+
+
+
+
 						"Type String"
 
 //Methods for Substrings
