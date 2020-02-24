@@ -1,0 +1,100 @@
+
+ECMAScript 2016 (ES7)
+
+1. Array.prototype.includes
+	cons arr = [5,12,45];
+	arr.includes(5); // true
+
+2. Exponentiation infix operator
+	x = Math.pow(7,2);
+
+	// Use 
+	x = 7**2;
+
+
+ECMAScript 2017(ES8)
+
+1. Object.values()
+2. Object.entries()
+3. Async/Await
+ Async functions themselves return a Promise.
+ Catch the entire async-await function.
+ asnc function test(){
+ 	a = await fun1()
+ 	b = await fun2();
+ }
+ test().then().catch(console.log)
+
+ECMAScript 2018 (ES9)
+
+1. Spread properties for Objects
+	const x = {name: 'max'};
+	const y = {age: 23};
+	const z = {...x, ... y};
+2. Promise.prototype.finally()	
+
+
+ECMAScript 2019 (ES10)
+
+1. Object.fromEntries()
+	const obj = {one: 1, two: 2, three: 3};
+
+	console.log(Object.entries(obj));// => [["one", 1], ["two", 2], ["three", 3]]
+
+2. trimStart() and trimEnd()
+	const str = "   string   ";
+	// es2019
+	console.log(str.trimStart());    // => "string   "
+	console.log(str.trimEnd());      // => "   string"
+
+3. flat() and flatMap()
+	const arr = ['a', 'b', ['c', 'd']];
+	const flattened = arr.flat();    // => ["a", "b", "c", "d"]
+
+	const arr = [4.25, 19.99, 25.5];
+    console.log(arr.flatMap(value => [Math.round(value)])); // => [4, 20, 26]
+
+4. Description property for Symbol objects
+	let sym = Symbol('foo');
+	console.log(sym.description);    // => fo
+
+5.Function.toString()
+	The toString() method returns a string representing the source code of the function
+
+6.Well Formed JSON.Stringify()
+
+7.Array.Sort Stability
+
+
+
+ECMAScript 2020 (ES11)
+
+1. ES2020 String.prototype.matchAll
+
+2. Private Class Variables.
+	class Message {
+	  #message = "Howdy"
+
+	  greet() { console.log(this.#message) }
+	}
+
+3. Promise.allSettled
+	it could be useful to log what’s happening to each to debug errors. With Promise.allSettled, 
+	we can create a new promise that only returns when all of the promises passed to it are complete.
+	 This will give us access to an array with some data on each promise.
+
+	const p1 = new Promise((res, rej) => setTimeout(res, 1000));
+	const p2 = new Promise((res, rej) => setTimeout(rej, 1000));
+	Promise.allSettled([p1, p2]).then(data => console.log(data));
+
+4. BigInt 
+	const bigNum = 100000000000000000000000000000n;
+	console.log(bigNum * 2n); // 200000000000000000000000000000n
+
+5. Dynamic Import	
+	const doMath = async (num1, num2) => {
+	  if (num1 && num2) {
+	    const math = await import('./math.js');
+	    console.log(math.add(5, 10));
+	  };
+	};
