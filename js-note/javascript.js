@@ -968,7 +968,7 @@ var result = arr.reduce(function(sum, current) {
 
 							Bloking code .example in bubble sort
 
-// https://github.com/pragmader/presentations/commit/37a41ad9f41f4de3fb1909acbe9b90d40c8aee6d
+// https://rdner.de/slides/jsib/2015-09-19-blocking-event-loop/bubble-sort/
 ///example 1 when arr length big number browser is working good
 function sortStep(arr, i, j, callback) {
 	console.log(i + ' ' + j);
